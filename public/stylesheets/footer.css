@@ -5,3 +5,10 @@ footer{
     left: 0;
     bottom: 0;
 }
+
+@media screen and (max-width: 800px){
+    img#enseñar-img{
+        width: 400px;
+        height: 150px;
+    }
+}

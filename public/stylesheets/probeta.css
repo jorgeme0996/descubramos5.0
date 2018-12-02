@@ -1,3 +1,22 @@
 div.col-6 {
     border: 1px solid gray;
 }
+
+div#chart_div{
+    width: 1000px;
+    height: 600px;
+}
+ 
+@media screen and (max-width: 800px){
+    div#chart_div{
+        width: 400px;
+        height: 200px;
+    }
+}
+
+div.sticky-bar {
+    border: 2px solid gray;
+    width: 400px;
+    height: 20px;
+    background-color: gray;
+}   
