@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/probeta.css">
+
+<div class="container">
+
+    <h1>Probeta 1</h1>
+
+    <h2>Elementos seleccionados: <%= nelem %></h2>
+
+    <div class="row">
+        <div class="col-md-6 col-6">
+            <h3>Deformación</h3>
+            <% for (let i in defIterada){ %>
+                <p><%= defIterada[i] %></p>
+                <hr>
+            <% } %>
+        </div>
+        <div class="col-md-6 col-6">
+            <h3>MPA</h3>
+            <% for (let i in mpaIterada){ %>
+                <p><%= mpaIterada[i] %></p>
+                <hr>
+            <% } %>
+        </div>
+    </div>
+     
+    <div id="chart_div"></div>
+
+    <div class="sticky-bar"></div>
+</div>
+
+<script> 
+    var grafica = [<%=grafica%>];
+    console.log(grafica);
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Defromación');
+      data.addColumn('number', 'MPA');
+
+      data.addRows(grafica);
+
+      var options = {
+        hAxis: {
+          title: 'Deformación MM'
+        },
+        vAxis: {
+          title: 'MPA'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+</script>
+
+<% include ../partials/footer %>

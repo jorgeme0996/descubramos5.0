@@ -4,7 +4,8 @@ var express         = require("express"),
     seedDB          = require("./seed"),
     mongoose        = require("mongoose"),
     Probeta1        = require("./models/probeta1"),
-    Probeta2        = require("./models/probeta2");
+    Probeta2        = require("./models/probeta2"),
+    Probeta3        = require("./models/probeta3");
 
 
 seedDB();   
@@ -44,6 +45,29 @@ app.post("/probeta1", function(req, res){
 app.post("/probeta2", function(req, res){
     var nelem = req.body.nelem;
     Probeta2.find({}, function(err, data){
+        if(err){
+            console.log(err)
+        } else {
+            var def = data[0].deformacion;
+            var mpa = data[0].mpa;
+            
+            var defIterada = [];
+            var mpaIterada = [];
+            var grafica = []
+
+            for(let i=0; i<parseInt(nelem); i++){
+                defIterada.push(def[i]);
+                mpaIterada.push(mpa[i]);
+                grafica.push("["+def[i].toString()+","+mpa[i].toString()+"]")
+            }   
+            res.render("probeta2/probeta2", {defIterada: defIterada, mpaIterada: mpaIterada, nelem: nelem, grafica: grafica});
+        } 
+    });
+});
+
+app.post("/probeta3", function(req, res){
+    var nelem = req.body.nelem;
+    Probeta3.find({}, function(err, data){
         if(err){
             console.log(err)
         } else {
