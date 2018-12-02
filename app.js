@@ -7,8 +7,8 @@ var express         = require("express"),
 
 
 //seedDB();   
-mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
-//mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
+mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
