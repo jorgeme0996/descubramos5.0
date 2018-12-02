@@ -6,9 +6,9 @@ var express         = require("express"),
     Probeta1        = require("./models/probeta1");
 
 
-//seedDB();   
-mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
-//mongoose.connect("mongodb://jorge:jorge007@ds141960.mlab.com:41960/descubramos", {useNewUrlParser: true});
+seedDB();   
+//mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
+mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
