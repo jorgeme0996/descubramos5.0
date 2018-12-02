@@ -8,7 +8,7 @@ var express         = require("express"),
     Probeta3        = require("./models/probeta3");
 
 
-seedDB();   
+//seedDB();   
 //mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
 mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
