@@ -4,17 +4,58 @@
 
 <div class="container">
 
-<h1>Nombre del Proyecto</h1>
+<h1>Graficas de esfuerzo y deformación</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <a class="btn btn-primary btn-lg" href="#"><p>Probeta 1</p></a>
+        <div class="formulario">
+            <h2>Probeta 1</h2>
+            <form action="/probeta1" method="POST">
+                <div class="form-group">
+                    <label>Escoge cuantos valores quieres graficar</label>
+                    <select class="form-control" name="nelem">
+                    <% for (let i=0; i<=28; i++){ %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Probeta 1</button>
+            </form>
+        </div>
     </div>
+
     <div class="col-md-4">
-        <a class="btn btn-success btn-lg" href="#"><p>Probeta 2</p></a>
+        <div class="formulario">
+            <h2>Probeta 2</h2>
+            <form action="/probeta2" method="POST">
+                <div class="form-group">
+                    <label>Escoge cuantos valores quieres graficar</label>
+                    <select class="form-control" name="nelem">
+                    <% for (let i=0; i<=28; i++){ %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                    </select>
+                </div>
+                <button type="#" class="btn btn-primary">Probeta 2</button>
+            </form>
+        </div>
     </div>
+
     <div class="col-md-4">
-        <a class="btn btn-danger btn-lg" href="#"><p>Probeta 3</p></a>
+        <div class="formulario">
+            <h2>Probeta 3</h2>
+            <form action="/probeta3" method="POST">
+                <div class="form-group">
+                    <label>Escoge cuantos valores quieres graficar</label>
+                    <select class="form-control" name="nelem">
+                    <% for (let i=0; i<=34; i++){ %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                    </select>
+                </div>
+                <button type="#" class="btn btn-primary">Probeta 3</button>
+            </form>
+        </div>
     </div>
 </div>
 
