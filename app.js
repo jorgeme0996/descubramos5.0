@@ -6,9 +6,9 @@ var express         = require("express"),
     Probeta1        = require("./models/probeta1");
 
 
-seedDB();   
-//mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
-mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
+//seedDB();   
+mongoose.connect("mongodb://localhost/Probetas", {useNewUrlParser: true});    
+//mongoose.connect("mongodb://jorgeme0996:jorge007@ds123454.mlab.com:23454/probetas", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -25,7 +25,18 @@ app.post("/probeta1", function(req, res){
         } else {
             var def = data[0].deformacion;
             var mpa = data[0].mpa;
-            res.render("probeta1/probeta1", {def:def, mpa:mpa, nelem: nelem});
+            
+            var defIterada = [];
+            var mpaIterada = [];
+            var grafica = []
+
+            for(let i=0; i<parseInt(nelem); i++){
+                defIterada.push(def[i]);
+                mpaIterada.push(mpa[i]);
+                grafica.push("["+def[i].toString()+","+mpa[i].toString()+"]")
+            }   
+            console.log(grafica);
+            res.render("probeta1/probeta1", {defIterada: defIterada, mpaIterada: mpaIterada, nelem: nelem, grafica: grafica});
         } 
     });
 });
