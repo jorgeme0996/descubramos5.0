@@ -5,6 +5,7 @@ div.col-6 {
 div#chart_div{
     width: 1000px;
     height: 600px;
+    margin-bottom: 5%;
 }
  
 @media screen and (max-width: 800px){
@@ -25,3 +26,13 @@ div.sticky-bar {
     height: 20px;
     background-color: gray;
 }   
+
+
+h1,h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+div.azul{
+    background-color: #E4E4E4;
+}
