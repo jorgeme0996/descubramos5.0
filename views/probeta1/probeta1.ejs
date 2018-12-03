@@ -24,15 +24,25 @@
             <% } %>
         </div>
     </div>
-     
-    <div id="chart_div"></div>
 
-    <div class="sticky-bar"></div>
+    <div class="row">
+        <div id="chart_div"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img class="gif" src="/img/1.gif" width="400" height="150">
+        </div>
+
+        <div class="col-md-6">
+            <img class="gif" src="/img/2.gif " width="400" height="150">
+        </div>
+    </div>
+
 </div>
 
 <script> 
     var grafica = [<%=grafica%>];
-    console.log(grafica);
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawBasic);
 

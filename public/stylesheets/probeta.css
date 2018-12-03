@@ -12,6 +12,11 @@ div#chart_div{
         width: 400px;
         height: 200px;
     }
+
+    img.gif{
+        width: 200px;
+        height: 100px;
+    }
 }
 
 div.sticky-bar {

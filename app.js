@@ -83,7 +83,7 @@ app.post("/probeta3", function(req, res){
                 mpaIterada.push(mpa[i]);
                 grafica.push("["+def[i].toString()+","+mpa[i].toString()+"]")
             }   
-            res.render("probeta2/probeta2", {defIterada: defIterada, mpaIterada: mpaIterada, nelem: nelem, grafica: grafica});
+            res.render("probeta3/probeta3", {defIterada: defIterada, mpaIterada: mpaIterada, nelem: nelem, grafica: grafica});
         } 
     });
 });
