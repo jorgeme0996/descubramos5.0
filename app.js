@@ -88,7 +88,7 @@ app.post("/probeta3", function(req, res){
     });
 });
 
-app.listen(4000, function(){
+app.listen(process.env.PORT,process.env.IP, function(){
     console.log("Esta vivo!!!!")
 })
 //process.env.PORT,process.env.IP
